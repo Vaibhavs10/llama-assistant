@@ -27,7 +27,6 @@ Return only the corrected text, don't include a preamble.
 
 def fix_text(text):
     prompt = PROMPT_TEMPLATE.substitute(text=text)
-    print(prompt)
     output = llm.create_chat_completion(
         messages = [
             {
@@ -37,7 +36,7 @@ def fix_text(text):
         ]
     )
     print(output)
-    return output["choices"][0]["text"].strip()
+    return output["choices"][0]["message"]["content"].strip()
 
 
 def fix_current_line():
