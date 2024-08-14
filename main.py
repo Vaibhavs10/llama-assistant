@@ -1,4 +1,5 @@
-# Copied from https://github.com/patrickloeber/ai-typing-assistant/blob/main/main.py
+# copied from https://github.com/patrickloeber/ai-typing-assistant/blob/main/main.py
+# main changes are to strip out the ollama stuff and replace it with llama-cpp-python to make it truly pythonic
 
 import time
 from string import Template
