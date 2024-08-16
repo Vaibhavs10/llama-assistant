@@ -17,7 +17,7 @@ llm = Llama.from_pretrained(
 
 controller = Controller()
 
-PROMPT_TEMPLATE = Template(
+FIX_PROMPT_TEMPLATE = Template(
     """Fix all typos and casing and punctuation in this text, but preserve all new line characters:
 
 $text
@@ -26,8 +26,30 @@ Return only the corrected text, don't include a preamble.
 """
 )
 
+TRANSLATE_PROMPT_TEMPLATE = Template(
+    """Translate this text to French, but preserve all new line characters:
+
+$text
+
+Return only the translated text, don't include a preamble.
+"""
+)
+
 def fix_text(text):
-    prompt = PROMPT_TEMPLATE.substitute(text=text)
+    prompt = FIX_PROMPT_TEMPLATE.substitute(text=text)
+    output = llm.create_chat_completion(
+        messages = [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+    print(output)
+    return output["choices"][0]["message"]["content"].strip()
+
+def translate_text(text):
+    prompt = TRANSLATE_PROMPT_TEMPLATE.substitute(text=text)
     output = llm.create_chat_completion(
         messages = [
             {
