@@ -107,10 +107,10 @@ def fix_selection(usecase="fix"):
         controller.tap("v")
 
 def on_f9():
-    fix_current_line(usecase="fix")
+    fix_selection(usecase="fix")
 
 def on_f10():
-    fix_current_line(usecase="translate")
+    fix_selection(usecase="translate")
 
 
 with keyboard.GlobalHotKeys({"<101>": on_f9, "<109>": on_f10}) as h:
