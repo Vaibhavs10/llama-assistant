@@ -1,6 +1,6 @@
 # LLaMA Assistant for Mac
 
-A simple assistant for Mac that uses llama-cpp-python to assist you on your predefined needs. This uses pretty much 90% of the code from [here](https://github.com/patrickloeber/ai-typing-assistant/blob/main/main.py) but replaces the ollama stuff with llama-cpp-python.
+A simple assistant for Mac that uses `llama-cpp-python` to assist you on your predefined needs. This uses pretty much 90% of the code from [here](https://github.com/patrickloeber/ai-typing-assistant/blob/main/main.py) but replaces the ollama stuff with [llama-cpp-python](https://github.com/abetlen/llama-cpp-python).
 
 ## Why?
 
@@ -27,4 +27,4 @@ Note: These steps are for macos. If you are on windows or linux, you will need t
 ## Acknowledgements:
 
 - [patrickloeber/ai-typing-assistant](https://github.com/patrickloeber/ai-typing-assistant)
-- [llama-cpp-python](https://github.com/abetlen/llama-cpp-python)
+- [abetlen/llama-cpp-python](https://github.com/abetlen/llama-cpp-python)

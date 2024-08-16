@@ -73,9 +73,9 @@ def fix_current_line(usecase="fix"):
     controller.release(Key.left)
 
     if usecase == "fix":
-        fix_selection()
+        fix_selection(usecase="fix")
     elif usecase == "translate":
-        translate_text()
+        fix_selection(usecase="translate")
 
 
 def fix_selection(usecase="fix"):
